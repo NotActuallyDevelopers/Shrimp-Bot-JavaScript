@@ -9,7 +9,7 @@ module.exports = {
     level: 0,
     aliases: [],
     category: 'Misc',
-    description: 'Search for a pokemoN!',
+    description: 'Search for a pokemon!',
     moreHelp: null
 };
 // eslint-disable-next-line no-unused-vars
