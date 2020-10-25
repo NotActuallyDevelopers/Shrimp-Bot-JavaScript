@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const randomPuppy = require('random-puppy');
+const got = require('got');
 module.exports = {
     name: 'cat',
     usage: '',
@@ -13,14 +13,20 @@ module.exports = {
 };
 // eslint-disable-next-line no-unused-vars
 module.exports.run = async (client, message, args, level) => {
-    const subReddits =  [ "cats", "cat"];
-    const random = subReddits[ Math.floor(Math.random() * subReddits.length) ];
-    const img = await randomPuppy(random);
-
-    const catEmbed = new MessageEmbed()
-        .setImage(img)
-        .setTitle(`From /r/${random}`)
-        .setURL(`http://reddit.com/${random}`)
-        
-    message.channel.send(catEmbed);
+    const embed = new MessageEmbed();
+    got('https://www.reddit.com/r/cat/random/.json').then(response => {
+        let content = JSON.parse(response.body);
+        let permalink = content[0].data.children[0].data.permalink;
+        let catUrl = `https://reddit.com${permalink}`;
+        let catImage = content[0].data.children[0].data.url;
+        let catTitle = content[0].data.children[0].data.title;
+        let catUpvotes = content[0].data.children[0].data.ups;
+        let catNumComments = content[0].data.children[0].data.num_comments;
+        embed.setTitle(`${catTitle}`);
+        embed.setURL(`${catUrl}`)
+        embed.setColor('RANDOM')
+        embed.setImage(catImage);
+        embed.setFooter(`👍 ${catUpvotes} 💬 ${catNumComments}`);
+        message.channel.send(embed)
+    }).catch(console.error)
 };
