@@ -4,7 +4,7 @@ module.exports = {
     usage: '(question)',
     guildOnly: false,
     enabled: true,
-    level: 0,
+    level: 1,
     aliases: [],
     category: 'Misc',
     description: 'Create a poll!',
