@@ -5,7 +5,7 @@ function doMagic8Ball() {
 }
 module.exports = {
     name: '8ball',
-    usage: '',
+    usage: '(question)',
     guildOnly: false,
     enabled: true,
     level: 0,
