@@ -5,7 +5,7 @@ module.exports = {
     name: 'instagram',
     usage: '(insta user)',
     guildOnly: false,
-    enabled: true,
+    enabled: false,
     level: 0,
     aliases: ['insta-user'],
     category: 'Misc',
