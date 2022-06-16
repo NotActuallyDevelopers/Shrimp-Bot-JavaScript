@@ -63,5 +63,5 @@ client.internal = new Josh({
         if (!r) done++;
     });
     console.log(`Successfully loaded ${done}/${events.length} event${events.length !== 1 ? 's' : ''}.`);
-    client.login(client.config.token);
+    client.login(process.env.TOKEN);
 })();

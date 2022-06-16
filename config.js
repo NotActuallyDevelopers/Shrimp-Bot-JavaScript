@@ -4,8 +4,6 @@ const config = {
     // The Co-Owner's ids. By default the co-owners also have all the permissions.
     coOwnersIDs: ["389448705876688907", "", ""],
 
-    // The token for bot login
-    token: process.env.token,
     // The default settings for the servers
     settings: {
         prefix: '&&',
