@@ -1,11 +1,12 @@
 const { MessageEmbed } = require("discord.js");
 const { stripIndents } = require("common-tags");
 const insta = require("user-instagram");
+
 module.exports = {
     name: 'instagram',
     usage: '(insta user)',
     guildOnly: false,
-    enabled: false,
+    enabled: true,
     level: 0,
     aliases: ['insta-user'],
     category: 'Misc',
@@ -40,6 +41,6 @@ module.exports.run = async (client, message, args, level) => {
       message.channel.send(embed);
     }).catch(err => {
       console.log(err);
-      return message.reply("Are you sure that account exists?");
+      return message.reply(`Are you sure that account exists? Debug: ${err}`);
     });
 };
