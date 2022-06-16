@@ -1,0 +1,1 @@
+For setup click [here](https://github.com/NotActuallyDevelopers/Shrimp-Bot-Setup/blob/master/js-bot-setup.md)

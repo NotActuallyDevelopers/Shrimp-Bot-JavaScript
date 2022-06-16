@@ -1,14 +1,14 @@
 const config = {
     // The owners id. By default the owner has all the permissions.
-    ownerID: ["389448705876688907", "542243770113064961", "758890336511852550"],
+    ownerID: ["389448705876688907", "", ""],
     // The Co-Owner's ids. By default the co-owners also have all the permissions.
-    coOwnersIDs: ["389448705876688907", "542243770113064961", "758890336511852550"],
+    coOwnersIDs: ["389448705876688907", "", ""],
 
     // The token for bot login
     token: process.env.token,
     // The default settings for the servers
     settings: {
-        prefix: 'sb!',
+        prefix: '&&',
         logChannel: "768903011208003624",
         modRole: null,
         adminRole: null,
